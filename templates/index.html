@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TrackZone - Smart Logistics Login</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    body {margin:0;font-family:Arial,sans-serif;background-color:#f5f7fa;color:#333;box-sizing:border-box;}
+    *, *::before, *::after{box-sizing:inherit;}
+
+    /* HEADER */
+    .header{background-color:#0078d7;color:white;}
+    .header-content{display:flex;justify-content:space-between;align-items:center;padding:15px 20px;max-width:1200px;margin:0 auto;}
+    .header1{display:flex;align-items:center;gap:18px;}
+    .header1 h1{font-size:2.2em;margin:0;}
+    .header-logo{height:80px;width:80px;object-fit:cover;border-radius:50%;}
+    .header2{display:flex;align-items:center;gap:25px;}
+    .header2 p{margin:0;font-size:1.1em;cursor:pointer;transition:color 0.3s;}
+    .header2 p:hover{color:#a0cffc;}
+    .menu-toggle{display:none;font-size:1.8em;cursor:pointer;}
+
+    /* HOME PAGE */
+    .main-container{display:flex;justify-content:center;align-items:center;gap:30px;padding:100px 20px;flex-wrap:wrap;max-width:1000px;margin:0 auto;background:url("c1f42a4b-4b49-41c3-868f-b84a7a601d52.png") no-repeat center center;background-size:cover;border-radius:10px;min-height:60vh;}
+    .user,.delivery,.hub{background-color:#e6f0ff;border:2px solid #0078d7;border-radius:10px;text-align:center;padding:40px 20px;width:250px;box-shadow:0 4px 10px rgba(0,0,0,0.1);transition:transform 0.3s ease,background-color 0.3s ease;cursor:pointer;}
+    .user:hover,.delivery:hover,.hub:hover{background-color:#0078d7;color:white;transform:scale(1.05);}
+
+    /* LOGIN & DASHBOARD PAGES */
+    .login-page,.ai-page,.delivery-dashboard,.hub-dashboard{display:none;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:60px 20px;min-height:100vh;position:relative;animation:fadeIn 0.5s ease;}
+    @keyframes fadeIn{from{opacity:0;}to{opacity:1;}}
+
+    /* BACKGROUNDS */
+    #userLogin,#userAI{background:url("Person-browsing-pictures-on-a-PC.avif") no-repeat center center/cover;}
+    #deliveryLogin,#deliveryDashboard{background:url("DP_bg.jpg") no-repeat center center/cover;}
+    #hubLogin,#hubDashboard{background:url("HUB_bg.jpg") no-repeat center center/cover;}
+    #userLogin::before,#userAI::before,#deliveryLogin::before,#hubLogin::before,#deliveryDashboard::before,#hubDashboard::before{
+      content:"";position:absolute;inset:0;background:rgba(0,0,0,0.4);z-index:0;
+    }
+
+    /* BOXES */
+    .login-box,.ai-box,.dashboard-box{position:relative;z-index:1;background:rgba(255,255,255,0.9);border-radius:10px;padding:40px 30px;box-shadow:0 4px 12px rgba(0,0,0,0.2);width:90%;max-width:500px;}
+    .login-box h2,.ai-box h2,.dashboard-box h2{color:#0078d7;margin-bottom:20px;text-align:center;}
+    .chat-box{max-height:350px;overflow-y:auto;padding:10px;margin-bottom:10px;border:1px solid #ccc;border-radius:10px;background:#fff;}
+    .message{margin:8px 0;padding:10px;border-radius:8px;}
+    .ai-msg{background:#e6f0ff;color:#0078d7;text-align:left;}
+    .user-msg{background:#0078d7;color:white;text-align:right;}
+
+    input{width:100%;padding:12px 14px;margin:8px 0;border:1px solid #ccc;border-radius:8px;font-size:1em;outline:none;transition:border-color 0.3s;}
+    input:focus{border-color:#0078d7;}
+    button{width:100%;background-color:#0078d7;color:white;padding:12px;border:none;border-radius:8px;cursor:pointer;font-size:1.1em;transition:background-color 0.3s ease;margin-top:10px;}
+    button:hover{background-color:#005fa3;}
+    .back-btn{margin-top:15px;text-decoration:underline;color:#0078d7;cursor:pointer;}
+
+    /* FOOTER */
+    .security{display:flex;flex-direction:column;align-items:center;text-align:center;padding:50px 20px;background-color:#0078d7;color:white;font-size:0.9em;}
+    .footer{background-color:#0078d7;color:white;text-align:center;padding:20px 0;font-size:0.9em;width:100%;}
+    @media(max-width:900px){.menu-toggle{display:block;}.header2{display:none;}.main-container{flex-direction:column;}}
+  </style>
+</head>
+<body>
+  <!-- HEADER -->
+  <div class="header">
+    <div class="header-content">
+      <div class="header1">
+        <img src="FINAL_LOGO.png" alt="TrackZone Logo" class="header-logo">
+        <h1>TrackZone</h1>
+      </div>
+      <div class="header2">
+        <p>Services</p><p>Solutions</p><p>Partner</p><p>Company</p><p>Track</p><p>Help</p><p>About Us</p>
+      </div>
+      <i class="fa-solid fa-bars menu-toggle" id="menuToggle"></i>
+    </div>
+  </div>
+
+  <!-- HOME PAGE -->
+  <div class="main-container" id="homePage">
+    <div class="user" onclick="showLogin('user')"><h2><i class="fa-solid fa-user-circle"></i> User</h2><p>Track orders and manage preferences.</p></div>
+    <div class="delivery" onclick="showLogin('delivery')"><h2><i class="fa-solid fa-truck"></i> Delivery</h2><p>Update shipment and check deliveries.</p></div>
+    <div class="hub" onclick="showLogin('hub')"><h2><i class="fa-solid fa-warehouse"></i> Hub</h2><p>Manage inventory and hub operations.</p></div>
+  </div>
+
+  <!-- USER LOGIN -->
+  <div class="login-page" id="userLogin">
+    <div class="login-box">
+      <h2>User Login</h2>
+      <input type="text" id="trackingId" placeholder="Tracking ID" required>
+      <input type="text" id="mobileNum" placeholder="Mobile Number" required>
+      <button onclick="openAIpage()">Login</button>
+      <p class="back-btn" onclick="goBack()">← Back</p>
+    </div>
+  </div>
+
+  <!-- USER AI CHAT -->
+  <div class="ai-page" id="userAI">
+    <div class="ai-box">
+      <h2>AI Parcel Assistant</h2>
+      <div class="chat-box" id="chatBox">
+        <div class="ai-msg message">🤖 Hello! I’m your TrackZone AI assistant.<br>Ask me about your parcel status, estimated time, or delay reasons.</div>
+      </div>
+      <input type="text" id="userInput" placeholder="Ask about your parcel...">
+      <button onclick="sendMessage()">Send</button>
+      <p class="back-btn" onclick="goBackToLogin()">← Back</p>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="security">
+    <p><u>Information Security Policy</u></p>
+    <p>TrackZone protects the privacy, availability, and integrity of company information assets and ensures compliance with all requirements.</p>
+    <div class="subsecurity">
+      <i class="fa-brands fa-square-instagram"></i> 
+      <i class="fa-brands fa-facebook"></i> 
+      <i class="fa-brands fa-twitter"></i>
+      <i class="fa-brands fa-linkedin"></i>
+    </div><br>
+  </div>
+  <div class="footer">© 2025 TrackZone. All rights reserved.</div>
+
+  <script>
+    function showLogin(type){
+      document.getElementById("homePage").style.display="none";
+      document.querySelectorAll(".login-page").forEach(div=>div.style.display="none");
+      document.getElementById(type+"Login").style.display="flex";
+    }
+
+    function goBack(){
+      document.querySelectorAll(".login-page").forEach(div=>div.style.display="none");
+      document.getElementById("homePage").style.display="flex";
+    }
+
+    function openAIpage(){
+      const trackingId=document.getElementById("trackingId").value.trim();
+      const mobile=document.getElementById("mobileNum").value.trim();
+      if(trackingId && mobile){
+        document.getElementById("userLogin").style.display="none";
+        document.getElementById("userAI").style.display="flex";
+      } else {alert("Please enter both Tracking ID and Mobile Number.");}
+    }
+
+    function goBackToLogin(){
+      document.getElementById("userAI").style.display="none";
+      document.getElementById("userLogin").style.display="flex";
+    }
+
+    // ---- Gemini API Integration ----
+    async function sendMessage(){
+      const input=document.getElementById("userInput");
+      const chatBox=document.getElementById("chatBox");
+      const msg=input.value.trim();
+      if(msg==="") return;
+
+      // Display user message
+      chatBox.innerHTML += `<div class="user-msg message">🧍‍♂ ${msg}</div>`;
+      input.value="";
+      chatBox.scrollTop=chatBox.scrollHeight;
+
+      try {
+        const res = await fetch("http://127.0.0.1:5000/chat", {
+          method: "POST",
+          headers: {"Content-Type": "application/json"},
+          body: JSON.stringify({ message: msg })
+        });
+        const data = await res.json();
+        const reply = data.reply || "No response from AI.";
+        chatBox.innerHTML += `<div class="ai-msg message">🤖 ${reply}</div>`;
+      } catch (error) {
+        chatBox.innerHTML += `<div class="ai-msg message">⚠️ Server not reachable. Check Flask is running.</div>`;
+      }
+
+      chatBox.scrollTop=chatBox.scrollHeight;
+    }
+  </script>
+</body>
+</html>

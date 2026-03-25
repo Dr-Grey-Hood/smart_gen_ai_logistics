@@ -1,0 +1,27 @@
+📂 backend/
+ ├── 📂 java/
+ │   ├── M1_DatabaseConnector.java
+ │   ├── M2_PythonBridge.java
+ │   ├── M3_FrontendConnector.java
+ │   ├── M4_BlockchainHandler.java
+ │   ├── M5_MainBrain.java
+ │   └── application.properties
+ │
+ ├── 📂 python/
+ │   ├── m1_api_integration.py
+ │   ├── m2_ai_brain.py
+ │   ├── m3_learning_storage.py
+ │   ├── m4_dataset_linker.py
+ │   ├── m5_controller.py
+ │   └── model.pkl  # trained ML model
+ │
+ ├── 📂 blockchain/
+ │   ├── ledger.py / contract.sol
+ │   └── utils/
+ │
+ ├── 📂 frontend/
+ │   ├── index.html
+ │   ├── style.css
+ │   ├── script.js
+ │
+ └── README.md

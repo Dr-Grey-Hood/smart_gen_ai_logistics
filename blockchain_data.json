@@ -1,0 +1,61 @@
+[
+  {
+    "index": 0,
+    "timestamp": 1760662183.629757,
+    "transactions": [
+      {
+        "genesis": true
+      }
+    ],
+    "previous_hash": "0",
+    "nonce": 2423
+  },
+  {
+    "index": 1,
+    "timestamp": 1760662640.60243,
+    "transactions": [
+      {
+        "tracking_id": "T12345",
+        "mobile_number": 9876543210,
+        "customer_name": "Grey",
+        "origin": "Delhi",
+        "destination": "Mumbai",
+        "status": "In Transit"
+      }
+    ],
+    "previous_hash": "0005ce0705b15df13373cff10c1844265d7f798aaedee66d15b94c6faa1cf4ea",
+    "nonce": 4965
+  },
+  {
+    "index": 2,
+    "timestamp": 1760663353.9097202,
+    "transactions": [
+      {
+        "type": "prediction",
+        "record_id": 11,
+        "tracking_id": "T12345",
+        "mobile_number": "9876543210",
+        "prediction": "[Gemini Error] 404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.",
+        "timestamp": 1760663353.8006666
+      }
+    ],
+    "previous_hash": "a3d3a41d1d7871b8f6d312d419862ea92db7236c078753e78dd7e084aa40e3fe",
+    "nonce": 8580
+  },
+  {
+    "index": 3,
+    "timestamp": 1760672184.2743223,
+    "transactions": [
+      {
+        "type": "prediction",
+        "record_id": 12,
+        "tracking_id": "T12345",
+        "mobile_number": "9876543210",
+        "prediction": "As an AI, I **cannot access real-time logistics databases or carrier systems** to provide an exact, up-to-the-minute status for tracking ID T12345. The tracking ID and mobile number you provided are examples, and I don't have the ability to look them up on actual carrier networks.\n\nTo get the actual logistics status for T12345, you will need to:\n\n1.  **Identify the Shipping Carrier:** You need to know which company (e.g., FedEx, UPS, DHL, USPS, Royal Mail, India Post, Amazon Logistics, Blue Dart, etc.) is handling the package. This information is usually provided by the sender in your order confirmation email or on their website.\n2.  **Go to the Carrier's Official Website:** Navigate to the specific carrier's website.\n3.  **Enter the Tracking ID:** Look for a section like \"Track Your Package,\" \"Tracking,\" or \"Shipment Status\" and enter **T12345** into the designated field.\n\nThe mobile number (9876543210) might be used by the carrier to send you SMS updates, but it's typically not the primary method for tracking on their website unless you're logged into an account associated with that number.\n\n**Typical Logistics Statuses You Might See:**\n\n*   **Order Confirmed / Label Created:** The sender has prepared the shipment information and a tracking label, but the package hasn't been picked up by the carrier yet.\n*   **Package Received by Carrier:** The carrier has physically picked up the package from the sender.\n*   **In Transit / En Route:** The package is moving through the carrier's network, often with updates on its location (e.g., \"Arrived at [City] hub,\" \"Departed from [City] sorting facility\").\n*   **Out for Delivery:** The package has left the local delivery facility and is on its way to your address.\n*   **Delivered:** The package has been successfully delivered to the recipient.\n*   **Delivery Attempted:** The carrier tried to deliver the package but was unsuccessful (e.g., no one was available, business closed). They will usually attempt re-delivery or leave instructions for pickup.\n*   **Held at [Location] / On Hold:** The package is temporarily stored at a facility, possibly due to a sorting issue, weather delay, or pending customs clearance.\n*   **Exception / Delay:** There's an unexpected event causing a delay in delivery.\n\nOnce you know the carrier, you'll be able to get the precise status!",
+        "timestamp": 1760672184.0951767
+      }
+    ],
+    "previous_hash": "b77ba330f786f6f95ff647ee93b3a3d3023dfbc789b577ecb435b19f1937ed4f",
+    "nonce": 6012
+  }
+]

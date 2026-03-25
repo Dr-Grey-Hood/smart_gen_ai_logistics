@@ -1,0 +1,4 @@
+tracking_id,mobile_number,customer_name,origin,destination,status
+T12345,9876543210,Grey,Delhi,Mumbai,In Transit
+T67890,9123456789,Jay,Bangalore,Hyderabad,Delivered
+T24680,9012345678,A,Mumbai,Chennai,Pending
