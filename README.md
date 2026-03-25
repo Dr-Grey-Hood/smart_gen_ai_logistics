@@ -40,6 +40,8 @@ Designed to simulate how next-gen supply chains will operate: autonomous, transp
                 │ Predictions + Logs   │
                 └──────────────────────┘
 
+
+
 🔥 Key Features
 🤖 AI-Powered Predictions
 Demand forecasting
@@ -56,6 +58,8 @@ Feedback loop for model improvement
 🔄 Feedback System
 Real vs predicted comparison
 Continuous learning pipeline
+
+
 📁 Project Structure
 smart_gen_ai_logistics/
 │
@@ -78,6 +82,8 @@ smart_gen_ai_logistics/
 ├── java/                   # Optional modules
 │
 └── .gitignore
+
+
 🧠 How It Works
 Data is received via API
 Stored in SQLite database
@@ -85,6 +91,8 @@ AI model processes input
 Blockchain logs transaction
 Predictions returned
 Feedback improves system
+
+
 🧪 Future Enhancements
 🔥 Real blockchain (Ethereum / Hyperledger)
 🤖 Advanced ML models (LSTM, Transformers)
